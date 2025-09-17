@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Write My Assignment Pro</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9fb;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    nav .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: white;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      text-align: center;
+      padding: 120px 20px 100px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .hero button {
+      padding: 12px 28px;
+      border: none;
+      border-radius: 30px;
+      background: #00c853;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .hero button:hover {
+      background: #009624;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #222;
+      font-size: 2rem;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px 20px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+    }
+
+    /* Testimonials */
+    #testimonials {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      border-radius: 12px;
+      padding: 80px 20px;
+    }
+    .testimonial {
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+
+   /* Pricing */
+#pricing .card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 2rem;
+  max-width: 700px;
+  margin: auto;
+  text-align: left;
+}
+#pricing h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1a202c;
+}
+#pricing p {
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+}
+.pricing-icons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.pricing-icons img {
+  width: 70px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+.pricing-icons img:hover {
+  transform: scale(1.1);
+}
+
+
+/* Contact */
+#contact {
+  margin: 2rem auto;
+  max-width: 900px;
+}
+#contact .card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 2rem;
+}
+#contact h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #f7fafc;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: background 0.3s ease;
+}
+.contact-item:hover {
+  background: #edf2f7;
+}
+.contact-item img {
+  width: 36px;
+  height: 36px;
+}
+.contact-item span {
+  font-weight: 500;
+  color: #2d3748;
+}
+
+
+    /* Privacy */
+    #privacy {
+      background: linear-gradient(135deg, #8e2de2, #4a00e0);
+      color: white;
+      border-radius: 12px;
+      text-align: center;
+    }
+    #privacy p {
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    /* Contact */
+    .contact-card {
+      background: white;
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .contact-card p {
+      margin: 12px 0;
+      font-size: 1.1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Write My Assignment Pro</div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Welcome to Write My Assignment Pro</h1>
+    <p>Your trusted partner for top-notch academic support and assignments.</p>
+    <button>Get Started</button>
+  </div>
+
+  <!-- About -->
+<section id="about" style="padding:80px 20px; text-align:center; max-width:900px; margin:auto;">
+  <h2 style="font-size:2rem; font-weight:700; margin-bottom:20px; color:#222;">
+    About Us
+  </h2>
+  <p style="font-size:1.1rem; line-height:1.7; color:#555; max-width:750px; margin:auto;">
+    We handle all academic assignments and online classes across the globe. 
+    Hire professional essay writers with expertise and get 100% human-written papers. 
+    No AI, no plagiarism — only quality work delivered on time.
+  </p>
+</section>
+
+
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card">Online Classes</div>
+      <div class="card">Maths & Statistics</div>
+      <div class="card">Arts & Humanities</div>
+      <div class="card">Business Administration</div>
+      <div class="card">Computer Science</div>
+      <div class="card">Economics</div>
+      <div class="card">Education</div>
+      <div class="card">Engineering</div>
+      <div class="card">English & Literature</div>
+      <div class="card">History</div>
+      <div class="card">Political Science</div>
+      <div class="card">Social Sciences</div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">
+      <p>“Amazing service! I got my paper on time and it was top quality. They met all my requirements” <b>James Smith</b></p>
+    </div>
+    <div class="testimonial">
+      <p>“Very professional writers. They really helped me with my online class.”<b>Melissa Turner</b></p>
+    </div>
+    <div class="testimonial">
+      <p>“I love how confidential and reliable they are. Highly recommended!”<b>Marc Robinson</p>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing">
+    <h2>Pricing</h2>
+    <div class="card">
+      <p>We offer transparent and competitive pricing based on the:</p>
+      <ul>
+        <li>✔️ Academic level of the work</li>
+        <li>✔️ Type of assignment (e.g., Report vs. Presentation)</li>
+        <li>✔️ Expected submission deadline</li>
+      </ul>
+      <p>Reach out to us and we can discuss an affordable price without compromise on quality or timely delivery.</p>
+      
+    </div>
+  </section>
+  
+<!-- Contact -->
+<section id="contact" style="padding:60px 20px; text-align:center; max-width:700px; margin:auto;">
+  <h2 style="font-size:2rem; font-weight:700; margin-bottom:25px; color:#222;">Contact Us</h2>
+  <div class="contact-card" style="background:#fff; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.1); padding:30px; text-align:left; font-size:1.1rem; line-height:1.8;">
+    <p><span style="color:#2575fc; font-weight:600;">📧 Email:</span> business@writemyassignmentpro.com</p>
+    <p><span style="color:#2575fc; font-weight:600;">💬 WhatsApp Business:</span> +254 712 345 678</p>
+    <p><span style="color:#2575fc; font-weight:600;">📞 Phone:</span> +254 700 123 456</p>
+  </div>
+</section>
+
+  
+  <!-- FAQ Section -->
+<section id="faq" style="padding:80px 20px; background:#f9f9fb;">
+  <div style="max-width:900px; margin:auto;">
+    <h2 style="text-align:center; font-size:2rem; margin-bottom:40px; color:#222;">Frequently Asked Questions</h2>
+
+    <!-- Question 1 -->
+    <div class="faq-item" style="background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:15px; overflow:hidden;">
+      <button class="faq-question" style="width:100%; background:none; border:none; outline:none; text-align:left; padding:20px; font-size:1.1rem; font-weight:600; color:#333; cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
+        <span>How do I place an assignment order?</span>
+        <span class="icon" style="font-size:1.5rem; color:#666;">+</span>
+      </button>
+      <div class="faq-answer" style="display:none; padding:0 20px 20px; color:#555;">
+        Just head to our contact form, provide details about your assignment (topic, level, deadline), and we will get back to you with a clear quote before starting.
+      </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="faq-item" style="background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:15px; overflow:hidden;">
+      <button class="faq-question" style="width:100%; background:none; border:none; outline:none; text-align:left; padding:20px; font-size:1.1rem; font-weight:600; color:#333; cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
+        <span>How do you ensure my work is original?</span>
+        <span class="icon" style="font-size:1.5rem; color:#666;">+</span>
+      </button>
+      <div class="faq-answer" style="display:none; padding:0 20px 20px; color:#555;">
+        Every paper and answer is written from scratch and checked with plagiarism detection tools. You will always receive 100% original work tailored to your request.
+      </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="faq-item" style="background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:15px; overflow:hidden;">
+      <button class="faq-question" style="width:100%; background:none; border:none; outline:none; text-align:left; padding:20px; font-size:1.1rem; font-weight:600; color:#333; cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
+        <span>What happens if my assignment is not delivered on time?</span>
+        <span class="icon" style="font-size:1.5rem; color:#666;">+</span>
+      </button>
+      <div class="faq-answer" style="display:none; padding:0 20px 20px; color:#555;">
+        We take deadlines seriously. If there is ever a delay (which is rare), we will update you immediately and provide solutions — including refunds if necessary.
+      </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="faq-item" style="background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:15px; overflow:hidden;">
+      <button class="faq-question" style="width:100%; background:none; border:none; outline:none; text-align:left; padding:20px; font-size:1.1rem; font-weight:600; color:#333; cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
+        <span>Which payment methods do you accept?</span>
+        <span class="icon" style="font-size:1.5rem; color:#666;">+</span>
+      </button>
+      <div class="faq-answer" style="display:none; padding:0 20px 20px; color:#555;">
+        We accept PayPal for international clients and M-Pesa for local clients, ensuring fast and secure transactions.
+      </div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="faq-item" style="background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:15px; overflow:hidden;">
+      <button class="faq-question" style="width:100%; background:none; border:none; outline:none; text-align:left; padding:20px; font-size:1.1rem; font-weight:600; color:#333; cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
+        <span>Can I request revisions?</span>
+        <span class="icon" style="font-size:1.5rem; color:#666;">+</span>
+      </button>
+      <div class="faq-answer" style="display:none; padding:0 20px 20px; color:#555;">
+        Absolutely! If something does not match your requirements, we offer free revisions to make sure you are completely satisfied.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Accordion Script -->
+<script>
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    const icon = item.querySelector('.icon');
+
+    question.addEventListener('click', () => {
+      // Close all
+      faqItems.forEach(i => {
+        if (i !== item) {
+          i.querySelector('.faq-answer').style.display = 'none';
+          i.querySelector('.icon').textContent = '+';
+        }
+      });
+      // Toggle current
+      if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+        icon.textContent = '+';
+      } else {
+        answer.style.display = 'block';
+        icon.textContent = '−';
+      }
+    });
+  });
+</script>
+
+
+
+  <!-- Privacy -->
+  <section id="privacy">
+    <h2>Privacy & Confidentiality</h2>
+    <p>All client information and assignments are handled with the highest level of confidentiality. 
+       We protect your privacy and ensure your details remain secure at all times.</p>
+    <p style="font-size:1.05rem; line-height:1.6; color:#fff;">
+  You can read more about our privacy statement and data protection measures 
+  <a href="privacy.html" style="color:#ffdd57; font-weight:600; text-decoration:none;">here</a>.
+</p>
+
+  </section>
+
+  
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Write My Assignment Pro. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
